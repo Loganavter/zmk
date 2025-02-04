@@ -9,6 +9,22 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
+    macros {
+        new_macro: new_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RCTRL &kp LEFT_ALT &kp A>;
+            label = "NEW_MACRO";
+        };
+
+        new_macro1: new_macro1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RCTRL &kp LEFT_ALT &kp RIGHT_BRACKET>;
+            label = "NEW_MACRO1";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -53,10 +69,10 @@
 
             display-name = "Raise";
             bindings = <
-&kp TAB    &kp EXCL         &kp AT          &kp HASH      &kp DLLR          &kp PRCNT     &kp CARET  &kp AMPS   &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &kp BSPC
-&kp LCTRL  &kp PRINTSCREEN  &kp C_AC_PRINT  &kp C_PREV    &kp K_PLAY_PAUSE  &kp C_NEXT    &kp MINUS  &kp EQUAL  &kp LBKT         &kp RBKT  &kp BSLH  &kp GRAVE
-&kp LSHFT  &trans           &trans          &kp C_VOL_DN  &kp C_VOL_UP      &kp B         &kp UNDER  &kp PLUS   &kp LBRC         &kp RBRC  &kp PIPE  &kp TILDE
-                                            &kp LGUI      &trans            &kp SPACE     &kp RET    &trans     &kp RALT
+&kp TAB    &kp EXCL    &kp AT          &kp HASH      &kp DLLR      &kp PRCNT     &kp CARET  &kp AMPS   &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &kp BSPC
+&kp LCTRL  &new_macro  &kp C_AC_PRINT  &kp C_PREV    &new_macro1   &kp C_NEXT    &kp MINUS  &kp EQUAL  &kp LBKT         &kp RBKT  &kp BSLH  &kp GRAVE
+&kp LSHFT  &trans      &trans          &kp C_VOL_DN  &kp C_VOL_UP  &trans        &kp UNDER  &kp PLUS   &kp LBRC         &kp RBRC  &kp PIPE  &kp TILDE
+                                       &kp LGUI      &trans        &kp SPACE     &kp RET    &trans     &kp RALT
             >;
         };
 
