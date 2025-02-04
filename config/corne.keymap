@@ -15,21 +15,18 @@
         default_layer {
             display-name = "Base";
             bindings = <
-                // Оставьте bindings пустыми
             >;
         };
 
         lower_layer {
             display-name = "Lower";
             bindings = <
-                // Оставьте bindings пустыми
             >;
         };
 
         raise_layer {
             display-name = "Raise";
             bindings = <
-                // Оставьте bindings пустыми
             >;
         };
 
